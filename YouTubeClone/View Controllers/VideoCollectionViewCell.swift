@@ -17,6 +17,9 @@ class VideoCollectionViewCell: UICollectionViewCell {
     let thumbNailImageVIew: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.blue
+        imageView.image = UIImage(named: "")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -24,6 +27,9 @@ class VideoCollectionViewCell: UICollectionViewCell {
     let userProfileImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.backgroundColor = UIColor.green
+        imageView.image = UIImage(named: "")
+        imageView.layer.cornerRadius = 22
+        imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
