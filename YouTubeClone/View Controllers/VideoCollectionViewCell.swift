@@ -8,11 +8,7 @@
 
 import UIKit
 
-class VideoCollectionViewCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
+class VideoCollectionViewCell: BaseCell {
     
     let thumbNailImageVIew: UIImageView = {
         let imageView = UIImageView()
@@ -60,7 +56,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     
     
-    func setupViews() {
+    override func setupViews() {
         
         
         addSubview(thumbNailImageVIew)
@@ -93,15 +89,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .right, relatedBy: .equal, toItem: thumbNailImageVIew, attribute: .right, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
         
-    }
-    
-    
-    
-    
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
