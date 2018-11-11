@@ -18,6 +18,16 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         collectionView.backgroundColor = UIColor.white
         
         collectionView.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+        
+        navigationController?.navigationBar.isTranslucent = false
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "Home"
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 20.0)
+        navigationItem.titleView = titleLabel
+
+
     }
 
 
@@ -38,7 +48,8 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        let height = (view.frame.width - 16 - 16) * 9 / 16
+        return CGSize(width: view.frame.width, height: height + 16 + 68)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
