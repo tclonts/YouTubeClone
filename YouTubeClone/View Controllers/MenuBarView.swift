@@ -22,12 +22,14 @@ class MenuBar: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     }()
     
     let cellID = "cellID"
+    let imageNames = ["home", "trending", "subscriptions", "account"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
 
+        let selectedIndexPath = NSIndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: [])
         collectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         addSubview(collectionView)
         
@@ -42,9 +44,12 @@ class MenuBar: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MenuCollectionViewCell
 
-
+        cell.imageView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
+        cell.tintColor = UIColor.rgd(red: 91, green: 14, blue: 13)
+        
+        
         return cell
     }
     
@@ -77,9 +82,23 @@ class MenuCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
        let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "home")
+        iv.tintColor = UIColor.rgd(red: 91, green: 14, blue: 13)
+        iv.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
         return iv
     }()
+    
+    
+    override var isHighlighted: Bool {
+        didSet {
+            imageView.tintColor = isHighlighted ? UIColor.white : UIColor.rgd(red: 91, green: 14, blue: 13)
+        }
+    }
+    override var isSelected: Bool {
+        didSet {
+            imageView.tintColor = isSelected ? UIColor.white : UIColor.rgd(red: 91, green: 14, blue: 13)
+        }
+    }
+
 
    override func setupViews() {
         super.setupViews()
@@ -87,7 +106,9 @@ class MenuCollectionViewCell: BaseCell {
     addConstraintsWithFormat(format: "H:[v0(28)]", views: imageView)
     addConstraintsWithFormat(format: "V:[v0(28)]", views: imageView)
     
-    
+
+    addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+      addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
     
 }
