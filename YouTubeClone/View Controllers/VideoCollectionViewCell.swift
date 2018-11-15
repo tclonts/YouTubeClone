@@ -35,8 +35,13 @@ class VideoCollectionViewCell: BaseCell {
                 
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
                 
-            let estimatedRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFontSize(14)], context: nil)
+                let estimatedRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], context: nil)
              
+                if estimatedRect.size.height > 20 {
+                    titleLableHeightConstraint?.constant = 44
+                } else  {
+                    titleLableHeightConstraint?.constant = 20
+                }
                 
                 
             }
@@ -105,7 +110,7 @@ class VideoCollectionViewCell: BaseCell {
         addConstraintsWithFormat(format: "H:|-16-[v0(44)]", views: userProfileImageView)
         
         // Vertical constraints
-        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: thumbNailImageVIew, userProfileImageView, separatorView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-36-[v2(1)]|", views: thumbNailImageVIew, userProfileImageView, separatorView)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
         
