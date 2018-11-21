@@ -18,6 +18,8 @@
 		BE7DD5EC2197D64E0040B162 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5EB2197D64E0040B162 /* MenuBarView.swift */; };
 		BE7DD5EE2197E3960040B162 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5ED2197E3960040B162 /* BaseCell.swift */; };
 		BE7DD5F02198D1450040B162 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5EF2198D1450040B162 /* Video.swift */; };
+		BE7DD5F221A233190040B162 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F121A233190040B162 /* VideoController.swift */; };
+		BE7DD5F421A3B3BE0040B162 /* UIImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F321A3B3BE0040B162 /* UIImageVIewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		BE7DD5EB2197D64E0040B162 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		BE7DD5ED2197E3960040B162 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		BE7DD5EF2198D1450040B162 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		BE7DD5F121A233190040B162 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		BE7DD5F321A3B3BE0040B162 /* UIImageVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageVIewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		BE7DD5E52193D0AA0040B162 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE7DD5F121A233190040B162 /* VideoController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				BE7DD5E72193D60B0040B162 /* UIView.swift */,
 				BE7DD5E9219796BE0040B162 /* UIColor.swift */,
+				BE7DD5F321A3B3BE0040B162 /* UIImageVIewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,12 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7DD5E82193D60B0040B162 /* UIView.swift in Sources */,
+				BE7DD5F221A233190040B162 /* VideoController.swift in Sources */,
 				BE7DD5CB219129590040B162 /* AppDelegate.swift in Sources */,
 				BE7DD5E021912ED20040B162 /* HomeCollectionViewController.swift in Sources */,
 				BE7DD5E22193D06E0040B162 /* VideoCollectionViewCell.swift in Sources */,
 				BE7DD5EE2197E3960040B162 /* BaseCell.swift in Sources */,
 				BE7DD5F02198D1450040B162 /* Video.swift in Sources */,
 				BE7DD5EA219796BE0040B162 /* UIColor.swift in Sources */,
+				BE7DD5F421A3B3BE0040B162 /* UIImageVIewExtension.swift in Sources */,
 				BE7DD5EC2197D64E0040B162 /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

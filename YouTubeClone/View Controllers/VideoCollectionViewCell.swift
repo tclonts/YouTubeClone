@@ -12,9 +12,9 @@ class VideoCollectionViewCell: BaseCell {
     
     var video: Video? {
         didSet {
-            guard let image = video?.thumbnailImageName else { return }
+            setupThumbNailImage()
+            setupProfileImage()
             guard let profileImageName = video?.channel?.profileImageName else { return }
-//            guard let subtitleTextViews = video?.channel?.name else { return }
             guard let channelName = video?.channel?.name else { return }
             guard let numberOfViews = video?.numberOfViews else { return }
             
@@ -24,8 +24,6 @@ class VideoCollectionViewCell: BaseCell {
             let subTitleText = "\(channelName) • \(numberFormatter.string(from: numberOfViews)!) • 2 years ago"
             
             titleLabel.text = video?.title
-            thumbNailImageVIew.image = UIImage(named: image)
-            userProfileImageView.image = UIImage(named: profileImageName)
             
             subtitleTextView.text = subTitleText
             
@@ -48,6 +46,18 @@ class VideoCollectionViewCell: BaseCell {
         }
     }
     
+    func setupThumbNailImage() {
+        if let thumbnailImageUrl = video?.thumbnailImageName {
+            thumbNailImageVIew.loadImageUsingUrlString(urlString: thumbnailImageUrl)
+        }
+    }
+    
+    func setupProfileImage() {
+        if let profileImageUrl = video?.channel?.profileImageName{
+            userProfileImageView.loadImageUsingUrlString(urlString: profileImageUrl)
+        }
+    }
+    
     let thumbNailImageVIew: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.blue
@@ -65,6 +75,7 @@ class VideoCollectionViewCell: BaseCell {
         imageView.layer.cornerRadius = 22
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     

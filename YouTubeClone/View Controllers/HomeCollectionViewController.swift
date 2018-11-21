@@ -11,20 +11,6 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var videos: [Video] = {
-        
-        var KayneChannel = Channel()
-        KayneChannel.name = "KayneISTheBestChannel"
-        KayneChannel.profileImageName = "kanye_profile"
-        
-        
-        var blankSpaceVideo = Video()
-        blankSpaceVideo.title = "Taylor Swift - Blank Space"
-        blankSpaceVideo.thumbnailImageName = "AFork"
-        blankSpaceVideo.channel = KayneChannel
-        blankSpaceVideo.numberOfViews = 12324        
-        return [blankSpaceVideo]
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +33,15 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
         setupMenuBar()
         setupNavBarButtons()
+        VideoController.shared.fetchVideos()
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.collectionView.reloadData()
+    }
+    
     let menuBar: MenuBar = {
         let mb = MenuBar()
         mb.translatesAutoresizingMaskIntoConstraints = false
@@ -85,13 +77,13 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
+        return VideoController.shared.videos?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! VideoCollectionViewCell
     
-        cell.video = videos[indexPath.item]
+        cell.video = VideoController.shared.videos?[indexPath.item]
     
         return cell
     }
