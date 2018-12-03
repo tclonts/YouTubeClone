@@ -39,7 +39,9 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     let menuBar: MenuBar = {
@@ -57,20 +59,22 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     private func setupNavBarButtons() {
         let searchImage = UIImage(named: "search_icon")?.withRenderingMode(.alwaysOriginal)
         let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
-        
-        
+    
         let navMoreImage = UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal)
         let navMoreIconBarButtonItem = UIBarButtonItem(image: navMoreImage, style: .plain, target: self, action: #selector(handleNavigation))
        
         navigationItem.rightBarButtonItems = [navMoreIconBarButtonItem, searchBarButtonItem]
     }
     
+    
+    let settingsLauncher = SettingsLauncher()
+    
     @objc func handleSearch() {
-        print(123)
     }
     
     @objc func handleNavigation() {
-        print(123)
+        //Show Menu
+        settingsLauncher.showSettings()
     }
     
     // MARK: UICollectionViewDataSource

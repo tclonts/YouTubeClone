@@ -30,12 +30,13 @@ class VideoController {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                 
                 self.videos = [Video]()
+                print(json)
                 
                 for dictionary in json as! [[String: AnyObject]] {
                     let video = Video()
-                    video.title = dictionary["title"] as! String
                     video.thumbnailImageName = dictionary["thumbnail_image_name"] as? String
-                    
+                    video.title = dictionary["title"] as? String
+                    video.number_of_views = dictionary["number_of_views"] as? NSNumber
                     let channelDictionary = dictionary["channel"] as! [String: AnyObject]
                     
                     let channel = Channel()

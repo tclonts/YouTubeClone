@@ -20,6 +20,8 @@
 		BE7DD5F02198D1450040B162 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5EF2198D1450040B162 /* Video.swift */; };
 		BE7DD5F221A233190040B162 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F121A233190040B162 /* VideoController.swift */; };
 		BE7DD5F421A3B3BE0040B162 /* UIImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F321A3B3BE0040B162 /* UIImageVIewExtension.swift */; };
+		BE7DD5F621A9EF2F0040B162 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F521A9EF2F0040B162 /* SettingsLauncher.swift */; };
+		BE7DD5F821B4BFBA0040B162 /* SettingsLauncherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD5F721B4BFBA0040B162 /* SettingsLauncherCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		BE7DD5EF2198D1450040B162 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BE7DD5F121A233190040B162 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		BE7DD5F321A3B3BE0040B162 /* UIImageVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageVIewExtension.swift; sourceTree = "<group>"; };
+		BE7DD5F521A9EF2F0040B162 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		BE7DD5F721B4BFBA0040B162 /* SettingsLauncherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncherCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				BE7DD5DF21912ED20040B162 /* HomeCollectionViewController.swift */,
 				BE7DD5E12193D06E0040B162 /* VideoCollectionViewCell.swift */,
 				BE7DD5EB2197D64E0040B162 /* MenuBarView.swift */,
+				BE7DD5F521A9EF2F0040B162 /* SettingsLauncher.swift */,
+				BE7DD5F721B4BFBA0040B162 /* SettingsLauncherCollectionViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -201,12 +207,14 @@
 			files = (
 				BE7DD5E82193D60B0040B162 /* UIView.swift in Sources */,
 				BE7DD5F221A233190040B162 /* VideoController.swift in Sources */,
+				BE7DD5F621A9EF2F0040B162 /* SettingsLauncher.swift in Sources */,
 				BE7DD5CB219129590040B162 /* AppDelegate.swift in Sources */,
 				BE7DD5E021912ED20040B162 /* HomeCollectionViewController.swift in Sources */,
 				BE7DD5E22193D06E0040B162 /* VideoCollectionViewCell.swift in Sources */,
 				BE7DD5EE2197E3960040B162 /* BaseCell.swift in Sources */,
 				BE7DD5F02198D1450040B162 /* Video.swift in Sources */,
 				BE7DD5EA219796BE0040B162 /* UIColor.swift in Sources */,
+				BE7DD5F821B4BFBA0040B162 /* SettingsLauncherCollectionViewCell.swift in Sources */,
 				BE7DD5F421A3B3BE0040B162 /* UIImageVIewExtension.swift in Sources */,
 				BE7DD5EC2197D64E0040B162 /* MenuBarView.swift in Sources */,
 			);

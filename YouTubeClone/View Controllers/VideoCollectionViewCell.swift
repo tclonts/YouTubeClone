@@ -16,7 +16,7 @@ class VideoCollectionViewCell: BaseCell {
             setupProfileImage()
             guard let profileImageName = video?.channel?.profileImageName else { return }
             guard let channelName = video?.channel?.name else { return }
-            guard let numberOfViews = video?.numberOfViews else { return }
+            guard let numberOfViews = video?.number_of_views else { return }
             
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
@@ -81,7 +81,6 @@ class VideoCollectionViewCell: BaseCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Taylor Swift - Blank Space"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
     return label
