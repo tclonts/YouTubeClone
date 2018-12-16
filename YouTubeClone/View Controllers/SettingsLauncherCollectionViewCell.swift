@@ -10,10 +10,30 @@ import UIKit
 
 class SettingsLauncherCollectionViewCell: BaseCell {
     
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.darkGray : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+            iconImageView.tintColor = isHighlighted ? UIColor.white : UIColor.darkGray
+        }
+    }
+    
+    var setting: Setting? {
+        didSet{
+            nameLabel.text = setting?.name
+            guard let imageName = setting?.imageName else { return }
+
+            iconImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+            iconImageView.tintColor = UIColor.darkGray
+            
+        }
+    }
+    
     let nameLabel: UILabel = {
        let label = UILabel()
         label.text = "Settings"
         label.textColor = UIColor.black
+        label.font = label.font.withSize(13)
         return label
     }()
     

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YouTubeClone/View Controllers/SettingsLauncherCollectionViewCell.swift"
-            timestampString = "565498057.120452"
+            timestampString = "566690873.770039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "setupViews()"
             landmarkType = "7">
          </BreakpointContent>
